@@ -36,7 +36,7 @@ const projects = [
       "Telegram Bot API delivery",
     ],
     github: "https://github.com/farhanz27/qrbridge",
-    demo: null,
+    demo: "https://t.me/qrbridge_bot",
     color: "from-purple-500 to-violet-600",
     emoji: "🔳",
     category: "Microservice",
@@ -45,7 +45,7 @@ const projects = [
     title: "CloudPulse — Health Monitor",
     description:
       "A cloud service uptime monitoring system with scheduled health checks tracking status, latency, and response codes. Features a state-machine alert engine for consecutive failure detection.",
-    tags: ["Python", "FastAPI", "APScheduler", "Dashboard", "State Machine"],
+    tags: ["Python", "FastAPI", "APScheduler", "Vue.js", "State Machine"],
     features: [
       "Scheduled health checks & latency tracking",
       "State-machine alert engine (FastAPI)",
@@ -70,7 +70,7 @@ const projects = [
       "Unified domain intelligence interface",
     ],
     github: "https://github.com/farhanz27",
-    demo: null,
+    demo: "https://domainxray.farhann.dev/",
     color: "from-indigo-500 to-blue-600",
     emoji: "🌐",
     category: "Networking",
@@ -96,15 +96,15 @@ const projects = [
 
 function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: false, margin: "-60px" });
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      whileHover={{ y: -6 }}
-      transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeOut" } }}
+      transition={{ type: "spring", damping: 22, stiffness: 95, delay: (index % 3) * 0.1 }}
       className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/60 overflow-hidden transition-shadow duration-300 flex flex-col"
     >
       {/* Top gradient banner */}
@@ -188,7 +188,7 @@ export default function Projects() {
   const headerInView = useInView(headerRef, { once: true });
 
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={headerRef}

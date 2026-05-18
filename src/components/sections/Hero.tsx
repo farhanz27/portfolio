@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const TYPING_WORDS = [
@@ -51,7 +51,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center overflow-hidden"
       id="hero"
     >
       {/* Background grid */}
@@ -62,11 +62,8 @@ export default function Hero() {
         }}
       />
 
-      {/* Soft gradient blob */}
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl pointer-events-none bg-gradient-to-br from-blue-400 to-purple-500" />
-      <div className="absolute bottom-10 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl pointer-events-none bg-gradient-to-r from-blue-300 to-purple-300" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pt-24 pb-16">
+<div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — Text content */}
@@ -163,21 +160,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
-      >
-        <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown size={16} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
