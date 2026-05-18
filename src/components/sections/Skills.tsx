@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   SiPython, SiSpringboot, SiFastapi, SiNodedotjs, SiVuedotjs,
   SiReact, SiJavascript, SiTailwindcss, SiDocker,
@@ -43,26 +43,28 @@ const skills: { name: string; Icon: SkillIcon; color: string; category: string }
 
 const categories = ["All", "Backend", "Frontend", "Cloud", "DevOps", "Database", "Networking"];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" as const },
-  }),
-};
 
 export default function Skills() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [activeCategory, setActiveCategory] = useState("All");
+  const gridInnerRef = useRef<HTMLDivElement>(null);
+  const [gridHeight, setGridHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    const el = gridInnerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => setGridHeight(el.offsetHeight));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const filtered = skills.filter(
     (s) => activeCategory === "All" || s.category === activeCategory
   );
 
   return (
-    <section id="skills" className="py-24 bg-white">
+    <section id="skills" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6" ref={ref}>
         {/* Header */}
         <motion.div
@@ -103,26 +105,29 @@ export default function Skills() {
         </motion.div>
 
         {/* Skill cards grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
-          {filtered.map((skill, i) => (
-            <motion.div
-              key={skill.name}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={fadeUp}
-              custom={i}
-              whileHover={{ y: -4, scale: 1.04 }}
-              className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg transition-shadow cursor-default flex flex-col items-center gap-3 text-center"
-            >
-              <skill.Icon
-                size={36}
-                style={{ color: skill.color }}
-                className="transition-transform duration-200 group-hover:scale-110"
-              />
-              <h3 className="font-medium text-gray-800 text-xs leading-snug">{skill.name}</h3>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          animate={{ height: gridHeight }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        >
+          <div ref={gridInnerRef} className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 py-3 px-1">
+            <AnimatePresence mode="popLayout">
+              {filtered.map((skill, i) => (
+                <motion.div
+                  key={skill.name}
+                  layout
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1, transition: { delay: i * 0.03, duration: 0.25, ease: "easeOut" } }}
+                  exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.15 } }}
+                  whileHover={{ y: -4, scale: 1.04 }}
+                  className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg transition-shadow cursor-default flex flex-col items-center gap-3 text-center"
+                >
+                  <skill.Icon size={36} style={{ color: skill.color }} />
+                  <h3 className="font-medium text-gray-800 text-xs leading-snug">{skill.name}</h3>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

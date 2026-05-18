@@ -78,7 +78,7 @@ export default function Certifications() {
   const inView = useInView(headerRef, { once: true });
 
   return (
-    <section id="certifications" className="py-24 bg-gray-50/60">
+    <section id="certifications" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={headerRef}
@@ -139,15 +139,15 @@ function CertCard({
   parentInView: boolean;
 }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: false, margin: "-40px" });
   const visible = inView || parentInView;
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30, scale: 0.97 }}
-      animate={visible ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ delay: index * 0.09, duration: 0.55, ease: "easeOut" }}
+      animate={visible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.97 }}
+      transition={{ type: "spring", damping: 22, stiffness: 95, delay: (index % 3) * 0.08 }}
       whileHover={{ y: -6, boxShadow: "0 16px 48px rgba(0,0,0,0.08)" }}
       className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden cursor-default transition-all duration-300"
     >

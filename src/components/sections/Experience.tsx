@@ -73,14 +73,14 @@ const entries = [
 
 function JourneyCard({ entry, index, isLast }: { entry: (typeof entries)[0]; index: number; isLast: boolean }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const inView = useInView(ref, { once: false, margin: "-50px" });
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, x: -30 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ delay: index * 0.12, duration: 0.6, ease: "easeOut" }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+      transition={{ type: "spring", damping: 22, stiffness: 95, delay: index * 0.08 }}
       className="flex gap-6"
     >
       <div className="flex flex-col items-center">
@@ -88,7 +88,7 @@ function JourneyCard({ entry, index, isLast }: { entry: (typeof entries)[0]; ind
           <entry.icon size={18} className="text-white" />
         </div>
         {!isLast && (
-          <div className="w-px flex-1 mt-3 bg-gradient-to-b from-gray-200 to-transparent min-h-[2rem]" />
+          <div className="w-px flex-1 mt-3 bg-gradient-to-b from-gray-300 to-gray-100 min-h-[2rem]" />
         )}
       </div>
 
@@ -111,8 +111,8 @@ function JourneyCard({ entry, index, isLast }: { entry: (typeof entries)[0]; ind
             <motion.li
               key={i}
               initial={{ opacity: 0, x: -10 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: index * 0.12 + i * 0.07 + 0.2, duration: 0.4 }}
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+              transition={{ type: "spring", damping: 22, stiffness: 100, delay: i * 0.06 + 0.15 }}
               className="flex items-start gap-2.5 text-sm text-gray-600"
             >
               <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${entry.color} flex-shrink-0 mt-1.5`} />
@@ -138,7 +138,7 @@ export default function Experience() {
   const inView = useInView(headerRef, { once: true });
 
   return (
-    <section id="career" className="py-24 bg-white">
+    <section id="career" className="py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <motion.div
           ref={headerRef}

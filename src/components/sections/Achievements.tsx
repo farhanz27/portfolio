@@ -37,10 +37,10 @@ const achievements = [
 
 export default function Achievements() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: false, margin: "-80px" });
 
   return (
-    <section id="achievements" className="py-24 bg-white">
+    <section id="achievements" className="py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,10 +62,10 @@ export default function Achievements() {
             <motion.div
               key={a.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
-              whileHover={{ y: -4 }}
-              className="bg-white border border-gray-100 rounded-2xl p-6"
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ type: "spring", damping: 22, stiffness: 95, delay: i * 0.12 }}
+              whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeOut" } }}
+              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${a.color} flex items-center justify-center shadow-lg flex-shrink-0`}>
