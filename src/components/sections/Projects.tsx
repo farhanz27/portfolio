@@ -19,7 +19,7 @@ const projects = [
       "Multi-tenant architecture",
     ],
     github: "https://github.com/farhanz27/paytrack",
-    demo: null,
+    demo: "https://paytrack.farhann.dev",
     color: "from-blue-500 to-indigo-600",
     emoji: "💳",
     category: "Full Stack",
@@ -53,7 +53,7 @@ const projects = [
       "Real-time monitoring dashboard",
     ],
     github: "https://github.com/farhanz27",
-    demo: null,
+    demo: "https://cloudpulse.farhann.dev",
     color: "from-teal-500 to-cyan-600",
     emoji: "📡",
     category: "Cloud Ops",
@@ -173,8 +173,9 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
               Live Demo
             </motion.a>
           ) : (
-            <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-50 text-gray-400 text-sm font-medium border border-gray-100">
-              In Progress
+            <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-50 text-gray-300 text-sm font-medium border border-gray-100 cursor-not-allowed select-none">
+              <ExternalLink size={15} />
+              Unavailable
             </span>
           )}
         </div>
