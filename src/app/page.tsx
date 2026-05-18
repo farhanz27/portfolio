@@ -1,3 +1,4 @@
+import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import Skills from "@/components/sections/Skills";
@@ -13,6 +14,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 export default function Home() {
   return (
     <>
+      <Background />
       <LoadingScreen />
       <ScrollProgress />
       <Navbar />

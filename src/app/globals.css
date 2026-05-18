@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: transparent;
   color: #0a0a0a;
   overflow-x: hidden;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
