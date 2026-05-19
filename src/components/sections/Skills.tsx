@@ -7,10 +7,10 @@ import {
   SiPython, SiSpringboot, SiFastapi, SiNodedotjs, SiVuedotjs,
   SiReact, SiJavascript, SiTailwindcss, SiDocker,
   SiDigitalocean, SiFirebase, SiHuawei, SiPostgresql, SiGit, SiGithub,
-  SiLinux, SiGnubash, SiOpenai,
+  SiLinux, SiGnubash, SiOpenai, SiOpenapiinitiative,
 } from "react-icons/si";
-import { FaJava, FaAws } from "react-icons/fa";
-import { Globe, Lock, Plug, Network } from "lucide-react";
+import { FaJava, FaAws, FaNetworkWired } from "react-icons/fa";
+import { Globe, Lock } from "lucide-react";
 
 type SkillIcon = React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
 
@@ -20,7 +20,7 @@ const skills: { name: string; Icon: SkillIcon; color: string; category: string }
   { name: "Spring Boot", Icon: SiSpringboot, color: "#6DB33F", category: "Backend" },
   { name: "FastAPI", Icon: SiFastapi, color: "#009688", category: "Backend" },
   { name: "Node.js", Icon: SiNodedotjs, color: "#5FA04E", category: "Backend" },
-  { name: "REST APIs", Icon: Plug as SkillIcon, color: "#6366f1", category: "Backend" },
+  { name: "REST APIs", Icon: SiOpenapiinitiative, color: "#6BA539", category: "Backend" },
   { name: "LLM Integration", Icon: SiOpenai, color: "#412991", category: "Backend" },
   { name: "Vue.js", Icon: SiVuedotjs, color: "#4FC08D", category: "Frontend" },
   { name: "React Native", Icon: SiReact, color: "#61DAFB", category: "Frontend" },
@@ -33,10 +33,10 @@ const skills: { name: string; Icon: SkillIcon; color: string; category: string }
   { name: "Bash", Icon: SiGnubash, color: "#4EAA25", category: "DevOps" },
   { name: "AWS", Icon: FaAws as SkillIcon, color: "#FF9900", category: "Cloud" },
   { name: "DigitalOcean", Icon: SiDigitalocean, color: "#0080FF", category: "Cloud" },
-  { name: "Firebase", Icon: SiFirebase, color: "#DD2C00", category: "Cloud" },
+  { name: "Firebase", Icon: SiFirebase, color: "#FFCA28", category: "Cloud" },
   { name: "Huawei Cloud", Icon: SiHuawei, color: "#CF0A2C", category: "Cloud" },
   { name: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1", category: "Database" },
-  { name: "TCP/IP & DNS", Icon: Network as SkillIcon, color: "#0d9488", category: "Networking" },
+  { name: "TCP/IP & DNS", Icon: FaNetworkWired as SkillIcon, color: "#0d9488", category: "Networking" },
   { name: "TLS/SSL", Icon: Lock as SkillIcon, color: "#16a34a", category: "Networking" },
   { name: "HTTP/HTTPS", Icon: Globe as SkillIcon, color: "#7c3aed", category: "Networking" },
 ];
