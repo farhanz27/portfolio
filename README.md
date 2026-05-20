@@ -4,10 +4,12 @@ Personal portfolio site built with Next.js, showcasing my projects, skills, and 
 
 ## Tech Stack
 
-- **Framework** — Next.js 15 (App Router)
-- **Styling** — Tailwind CSS
+- **Framework** — Next.js 16 (App Router), React 19
+- **Styling** — Tailwind CSS 4
 - **Animations** — Framer Motion
+- **Background** — tsparticles (animated particle canvas)
 - **Icons** — Lucide React, React Icons
+- **UI Utilities** — clsx, tailwind-merge, class-variance-authority, Radix UI Slot
 - **Contact Form** — Formspree
 
 ## Sections
@@ -15,7 +17,7 @@ Personal portfolio site built with Next.js, showcasing my projects, skills, and 
 - **Hero** — Introduction and CTAs
 - **Skills** — Tech stack with official brand icons
 - **Projects** — Featured work with links
-- **Career** — Work experience and education timeline
+- **Experience** — Work experience and education timeline
 - **Achievements** — Asia Pacific competition awards
 - **Contact** — Contact form
 
@@ -32,11 +34,22 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```
 src/
-├── app/             # Next.js app router (layout, page, globals)
+├── app/
+│   ├── layout.tsx        # Root layout with metadata
+│   ├── page.tsx          # Home page
+│   ├── globals.css       # Global styles
+│   ├── sitemap.ts        # Auto-generated sitemap
+│   └── robots.ts         # Crawl rules
 ├── components/
-│   ├── sections/    # Page sections (Hero, Skills, Projects, etc.)
-│   └── ui/          # Shared UI components
-└── lib/             # Utility functions
+│   ├── sections/         # Page sections (Hero, Skills, Projects, Experience, Achievements, Contact, Footer)
+│   ├── ui/               # Shared UI components (SocialIcons)
+│   ├── Background.tsx    # Particle canvas background
+│   ├── Navbar.tsx        # Top navigation bar
+│   ├── LoadingScreen.tsx
+│   ├── ScrollProgress.tsx
+│   └── BackToTop.tsx
+└── lib/
+    └── utils.ts          # Utility functions (cn)
 ```
 
 ## Live Site
