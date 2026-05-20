@@ -11,7 +11,7 @@ const projects = [
     title: "PayTrack — Invoicing Platform",
     description:
       "A multi-tenant invoicing and payment tracking SaaS with an AI assistant powered by Google Gemini. Dashboard KPIs are pre-computed by a Lambda cron triggered via EventBridge, with PDF exports stored in S3.",
-    tags: ["Java", "Spring Boot", "Vue 3", "PostgreSQL", "AWS Lambda", "EventBridge", "S3", "Gemini AI", "Docker"],
+    tags: ["Java", "Spring Boot", "Vue 3", "PostgreSQL", "AWS Lambda", "S3", "Google Gemini", "Docker"],
     features: [
       "AI assistant (Pax) powered by Google Gemini",
       "Dashboard KPI pipeline via Lambda + EventBridge",

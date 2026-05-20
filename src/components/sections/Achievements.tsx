@@ -14,7 +14,7 @@ const achievements = [
     border: "border-amber-200",
     textColor: "text-amber-600",
     highlights: [
-      "Developed CommunityCARE — a complaint management system enhancing public engagement and transparency in local governance",
+      "Competed as part of team CyberWhiz, developing CommunityCARE — a complaint management system enhancing public engagement and transparency in local governance",
       "Integrated Huawei Cloud OBS for data storage and ModelArts for automated image recognition",
     ],
     tech: ["Huawei Cloud", "OBS", "ModelArts", "System Design"],
@@ -32,6 +32,34 @@ const achievements = [
       "Developed PBS batch scripts to automate job scheduling and resource allocation in distributed computing environments",
     ],
     tech: ["HPC", "MPAS", "PBS Scripts", "Parallel Computing"],
+  },
+  {
+    title: "Huawei ICT Competition 2023/2024",
+    award: "APAC Malaysia — Certificate of Participation",
+    year: "2024",
+    color: "from-rose-500 to-pink-600",
+    bg: "from-rose-50 to-pink-50",
+    border: "border-rose-200",
+    textColor: "text-rose-600",
+    highlights: [
+      "Competed in the Cloud Track at national level in Malaysia as part of the Asia Pacific regional competition",
+      "Demonstrated proficiency in Huawei Cloud services and cloud computing concepts",
+    ],
+    tech: ["Huawei Cloud", "Cloud Computing", "Cloud Track"],
+  },
+  {
+    title: "Anugerah Graduan Cemerlang 2024/2025",
+    award: "Graduan Terbaik Akademik Finexus",
+    year: "2025",
+    color: "from-purple-500 to-violet-600",
+    bg: "from-purple-50 to-violet-50",
+    border: "border-purple-200",
+    textColor: "text-purple-600",
+    highlights: [
+      "Recognised as the top academic graduate for the Department of Communication and Network Technology, sponsored by Finexus",
+      "Achieved a CGPA of 3.96, awarded by the Faculty of Computer Science and Information Technology",
+    ],
+    tech: ["Universiti Putra Malaysia", "FCSIT"],
   },
 ];
 
@@ -53,7 +81,7 @@ export default function Achievements() {
             <span className="gradient-text">Awards</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto">
-            Recognised at Asia Pacific level for innovation and high-performance computing.
+            Recognised for academic excellence and at Asia Pacific level for innovation and high-performance computing.
           </p>
         </motion.div>
 
