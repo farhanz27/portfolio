@@ -10,13 +10,13 @@ const projects = [
   {
     title: "PayTrack — Invoicing Platform",
     description:
-      "A multi-tenant invoicing and payment tracking SaaS with an AI assistant powered by Google Gemini. Dashboard KPIs are pre-computed by a Lambda cron triggered via EventBridge, with PDF exports stored in S3.",
-    tags: ["Java", "Spring Boot", "Vue 3", "PostgreSQL", "AWS Lambda", "S3", "Google Gemini", "Docker"],
+      "A multi-tenant invoicing SaaS for managing customers, invoices, quotations, and payments — with PDF exports, a product catalog, and an AI assistant powered by Google Gemini.",
+    tags: ["Java", "Spring Boot", "Vue 3", "PostgreSQL", "AWS", "Google Gemini", "Docker"],
     features: [
       "AI assistant (Pax) powered by Google Gemini",
-      "Dashboard KPI pipeline via Lambda + EventBridge",
+      "Multi-tenant workspaces with Owner / Admin / Member roles",
       "PDF export stored in S3 with presigned URLs",
-      "Multi-tenant workspaces with role-based access",
+      "Automated reminders via AWS Lambda + EventBridge + SES",
     ],
     github: "https://github.com/farhanz27/paytrack",
     demo: "https://paytrack.farhann.dev",
@@ -25,15 +25,15 @@ const projects = [
     category: "Full Stack",
   },
   {
-    title: "CloudPulse — Health Monitor",
+    title: "CloudPulse — Uptime Monitor",
     description:
-      "A cloud service uptime monitoring system with scheduled health checks tracking status, latency, and response codes. Built on Spring Boot with a state-machine alert engine and multi-channel notification integrations.",
+      "An uptime monitoring SaaS that tracks HTTP health, SSL and domain expiry, and sends downtime alerts via email, Telegram, Slack, Teams, or webhook.",
     tags: ["Java", "Spring Boot", "Vue 3", "PostgreSQL", "Docker"],
     features: [
-      "Scheduled health checks & latency tracking",
-      "State-machine alert engine (Spring Boot)",
-      "Multi-channel notifications (Telegram, Slack, Email)",
-      "Real-time monitoring dashboard",
+      "Scheduled HTTP health checks with configurable intervals (30s – 24h)",
+      "SSL & domain expiry tracking with advance alerts",
+      "Public status pages with 30-day uptime bars",
+      "Multi-channel notifications (Email, Telegram, Slack, Teams, Custom Webhook)",
     ],
     github: "https://github.com/farhanz27",
     demo: "https://cloudpulse.farhann.dev",
@@ -44,7 +44,7 @@ const projects = [
   {
     title: "DomainXray — DNS & WHOIS Tool",
     description:
-      "A domain intelligence tool with a custom DNS resolver and WHOIS client to query domain records, ownership, and registration data through a unified FastAPI + Vue.js interface.",
+      "A domain intelligence tool for resolving all major DNS record types and querying WHOIS registration data across 80+ TLDs, with support for custom nameservers and automatic referral chain following.",
     tags: ["Python", "FastAPI", "Vue 3", "DNS", "WHOIS", "Docker"],
     features: [
       "Custom DNS resolver",
