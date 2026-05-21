@@ -148,7 +148,7 @@ export default function Navbar() {
                 </button>
               ))}
               <a
-                href="/resume.pdf"
+                href="/MohammadFarhan_Resume.pdf"
                 download
                 className="mt-2 px-4 py-3 text-center text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white"
               >
