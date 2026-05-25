@@ -102,7 +102,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <motion.a
-              href="/resume.pdf"
+              href="/MohammadFarhan_Resume.pdf"
               download
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
