@@ -43,7 +43,6 @@ const skills: { name: string; Icon: SkillIcon; color: string; category: string }
 
 const categories = ["All", "Backend", "Frontend", "Cloud", "DevOps", "Database", "Networking"];
 
-
 export default function Skills() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -73,11 +72,11 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Skills &{" "}
             <span className="gradient-text">Technologies</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto">
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">
             Tools and technologies I use to build scalable, production-grade software.
           </p>
         </motion.div>
@@ -95,8 +94,8 @@ export default function Skills() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md shadow-blue-500/20"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-gradient-to-r from-sky-500 to-teal-500 text-white shadow-md shadow-sky-400/20"
+                  : "bg-white/60 backdrop-blur-sm border border-white/70 text-slate-600 hover:bg-white/80 hover:text-slate-800"
               }`}
             >
               {cat}
@@ -118,11 +117,11 @@ export default function Skills() {
                   initial={{ opacity: 0, scale: 0.85 }}
                   animate={{ opacity: 1, scale: 1, transition: { delay: i * 0.03, duration: 0.25, ease: "easeOut" } }}
                   exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.15 } }}
-                  whileHover={{ y: -4, scale: 1.04 }}
-                  className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg transition-shadow cursor-default flex flex-col items-center gap-3 text-center"
+                  whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+                  className="glass-card rounded-2xl p-4 hover:shadow-lg hover:shadow-sky-100/40 transition-shadow duration-300 cursor-default flex flex-col items-center gap-3 text-center"
                 >
                   <skill.Icon size={36} style={{ color: skill.color }} />
-                  <h3 className="font-medium text-gray-800 text-xs leading-snug">{skill.name}</h3>
+                  <h3 className="font-medium text-slate-700 text-xs leading-snug">{skill.name}</h3>
                 </motion.div>
               ))}
             </AnimatePresence>

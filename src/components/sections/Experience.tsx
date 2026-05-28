@@ -11,10 +11,10 @@ const entries = [
     period: "March 2025 – August 2025",
     type: "Work",
     icon: Briefcase,
-    color: "from-blue-500 to-blue-700",
-    bg: "bg-blue-50",
-    border: "border-blue-100",
-    textColor: "text-blue-600",
+    color: "from-sky-400 to-sky-600",
+    bg: "bg-sky-50",
+    border: "border-sky-100",
+    textColor: "text-sky-600",
     highlights: [
       "Developed Python-based applications and conducted system testing to ensure functionality, reliability, and seamless integration",
       "Designed and deployed a microservice on DigitalOcean, integrating it with a Rocket.Chat chatbot via a custom plugin to automate response handling",
@@ -27,10 +27,10 @@ const entries = [
     period: "September 2024 – February 2025",
     type: "Work",
     icon: Globe,
-    color: "from-purple-500 to-purple-700",
-    bg: "bg-purple-50",
-    border: "border-purple-100",
-    textColor: "text-purple-600",
+    color: "from-teal-400 to-teal-600",
+    bg: "bg-teal-50",
+    border: "border-teal-100",
+    textColor: "text-teal-600",
     highlights: [
       "Developed custom WordPress websites focusing on performance, responsiveness, and user experience",
       "Collaborated with clients to translate business needs into scalable web solutions aligned with best practices",
@@ -43,10 +43,10 @@ const entries = [
     period: "2021 – 2025",
     type: "Education",
     icon: GraduationCap,
-    color: "from-indigo-500 to-indigo-700",
-    bg: "bg-indigo-50",
-    border: "border-indigo-100",
-    textColor: "text-indigo-600",
+    color: "from-violet-400 to-violet-600",
+    bg: "bg-violet-50",
+    border: "border-violet-100",
+    textColor: "text-violet-600",
     highlights: [
       "CGPA 3.96 — Vice Chancellor Awards & Dean List Awards throughout the programme",
       "Specialised in TCP/IP, DNS, TLS/SSL, and routing protocols alongside software engineering",
@@ -60,10 +60,10 @@ const entries = [
     period: "2020 – 2021",
     type: "Education",
     icon: GraduationCap,
-    color: "from-sky-500 to-sky-700",
-    bg: "bg-sky-50",
-    border: "border-sky-100",
-    textColor: "text-sky-600",
+    color: "from-cyan-400 to-sky-500",
+    bg: "bg-cyan-50",
+    border: "border-cyan-100",
+    textColor: "text-cyan-600",
     highlights: [
       "CGPA 3.75 — Science stream with focus on Mathematics, Physics, and Chemistry",
     ],
@@ -88,21 +88,24 @@ function JourneyCard({ entry, index, isLast }: { entry: (typeof entries)[0]; ind
           <entry.icon size={18} className="text-white" />
         </div>
         {!isLast && (
-          <div className="w-px flex-1 mt-3 bg-gradient-to-b from-gray-300 to-gray-100 min-h-[2rem]" />
+          <div className="w-px flex-1 mt-3 bg-gradient-to-b from-slate-300 to-slate-100 min-h-[2rem]" />
         )}
       </div>
 
-      <div className="flex-1 mb-10 bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <motion.div
+        whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeOut" } }}
+        className="flex-1 mb-10 glass-card rounded-2xl p-6 hover:shadow-lg hover:shadow-sky-100/40 transition-shadow duration-300"
+      >
         <div className="flex flex-wrap items-start justify-between gap-2 mb-4">
           <div>
-            <h3 className="font-bold text-gray-900 text-base">{entry.title}</h3>
+            <h3 className="font-bold text-slate-900 text-base">{entry.title}</h3>
             <p className={`text-sm font-semibold mt-0.5 ${entry.textColor}`}>{entry.org}</p>
           </div>
           <div className="flex items-center gap-2">
             <span className={`px-3 py-1 rounded-full text-xs font-semibold ${entry.bg} ${entry.textColor}`}>
               {entry.type}
             </span>
-            <span className="text-gray-400 text-xs font-medium">{entry.period}</span>
+            <span className="text-slate-400 text-xs font-medium">{entry.period}</span>
           </div>
         </div>
 
@@ -113,7 +116,7 @@ function JourneyCard({ entry, index, isLast }: { entry: (typeof entries)[0]; ind
               initial={{ opacity: 0, x: -10 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
               transition={{ type: "spring", damping: 22, stiffness: 100, delay: i * 0.06 + 0.15 }}
-              className="flex items-start gap-2.5 text-sm text-gray-600"
+              className="flex items-start gap-2.5 text-sm text-slate-600"
             >
               <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${entry.color} flex-shrink-0 mt-1.5`} />
               {h}
@@ -123,12 +126,12 @@ function JourneyCard({ entry, index, isLast }: { entry: (typeof entries)[0]; ind
 
         <div className="flex flex-wrap gap-1.5">
           {entry.tech.map((t) => (
-            <span key={t} className="px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-100 text-gray-600 text-xs font-medium">
+            <span key={t} className="px-2.5 py-1 rounded-lg bg-sky-50/80 border border-sky-100/80 text-slate-600 text-xs font-medium">
               {t}
             </span>
           ))}
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
@@ -147,11 +150,11 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Career{" "}
             <span className="gradient-text">Journey</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto">
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">
             Work experience, academic background, and Asia Pacific competition awards.
           </p>
         </motion.div>

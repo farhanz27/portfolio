@@ -20,7 +20,7 @@ const projects = [
     ],
     github: "https://github.com/farhanz27/paytrack",
     demo: "https://paytrack.farhann.dev",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-sky-400 to-blue-500",
     emoji: "💳",
     category: "Full Stack",
   },
@@ -37,7 +37,7 @@ const projects = [
     ],
     github: "https://github.com/farhanz27",
     demo: "https://cloudpulse.farhann.dev",
-    color: "from-teal-500 to-cyan-600",
+    color: "from-teal-400 to-cyan-500",
     emoji: "📡",
     category: "Cloud Ops",
   },
@@ -54,7 +54,7 @@ const projects = [
     ],
     github: "https://github.com/farhanz27",
     demo: "https://domainxray.farhann.dev/",
-    color: "from-indigo-500 to-blue-600",
+    color: "from-indigo-400 to-sky-500",
     emoji: "🌐",
     category: "Networking",
   },
@@ -71,7 +71,7 @@ const projects = [
     ],
     github: "https://github.com/farhanz27/qrbridge",
     demo: "https://t.me/qrbridge_bot",
-    color: "from-purple-500 to-violet-600",
+    color: "from-violet-400 to-purple-500",
     emoji: "🔳",
     category: "Microservice",
   },
@@ -88,7 +88,7 @@ const projects = [
     ],
     github: "https://github.com/farhanz27/aquavision",
     demo: null,
-    color: "from-cyan-500 to-blue-500",
+    color: "from-cyan-400 to-sky-400",
     emoji: "🐟",
     category: "IoT & Mobile",
   },
@@ -105,32 +105,31 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeOut" } }}
       transition={{ type: "spring", damping: 22, stiffness: 95, delay: (index % 3) * 0.1 }}
-      className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/60 overflow-hidden transition-shadow duration-300 flex flex-col"
+      className="group relative glass-card rounded-2xl overflow-hidden flex flex-col hover:shadow-lg hover:shadow-sky-100/40 transition-shadow duration-300"
     >
       {/* Top gradient banner */}
       <div className={`relative h-44 bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden`}>
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-25"
           style={{
-            backgroundImage: `radial-gradient(circle at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 60%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.2) 0%, transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 30% 50%, rgba(255,255,255,0.35) 0%, transparent 60%), radial-gradient(circle at 70% 20%, rgba(255,255,255,0.2) 0%, transparent 50%)`,
           }}
         />
         <span className="text-6xl relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
           {project.emoji}
         </span>
-        <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold border border-white/30">
+        <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/25 backdrop-blur-sm text-white text-xs font-semibold border border-white/30">
           {project.category}
         </span>
       </div>
 
-
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-bold text-gray-900 text-lg mb-2 leading-snug">{project.title}</h3>
-        <p className="text-gray-500 text-sm leading-relaxed mb-4">{project.description}</p>
+        <h3 className="font-bold text-slate-900 text-lg mb-2 leading-snug">{project.title}</h3>
+        <p className="text-slate-500 text-sm leading-relaxed mb-4">{project.description}</p>
 
         <ul className="space-y-1.5 mb-5">
           {project.features.map((f) => (
-            <li key={f} className="flex items-center gap-2 text-xs text-gray-600">
+            <li key={f} className="flex items-center gap-2 text-xs text-slate-600">
               <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.color} flex-shrink-0`} />
               {f}
             </li>
@@ -141,21 +140,21 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-100 text-gray-600 text-xs font-medium"
+              className="px-2.5 py-1 rounded-lg bg-sky-50/80 border border-sky-100/80 text-slate-600 text-xs font-medium"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-3 pt-4 border-t border-gray-50 mt-auto">
+        <div className="flex gap-3 pt-4 border-t border-white/60 mt-auto">
           <motion.a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900/90 text-white text-sm font-semibold hover:bg-slate-900 transition-colors"
           >
             <GithubIcon width={15} height={15} />
             Code
@@ -173,7 +172,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
               Live Demo
             </motion.a>
           ) : (
-            <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-50 text-gray-300 text-sm font-medium border border-gray-100 cursor-not-allowed select-none">
+            <span className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-50/80 text-slate-300 text-sm font-medium border border-slate-100/80 cursor-not-allowed select-none">
               <ExternalLink size={15} />
               Unavailable
             </span>
@@ -198,11 +197,11 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Featured{" "}
             <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto">
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">
             Real-world applications built with modern tech stacks and deployed to production.
           </p>
         </motion.div>
@@ -225,7 +224,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 bg-white text-gray-700 font-semibold text-sm shadow-sm hover:shadow-md hover:border-gray-300 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass border border-white/70 text-slate-700 font-semibold text-sm hover:shadow-md transition-all"
           >
             <GithubIcon width={16} height={16} />
             View All on GitHub
