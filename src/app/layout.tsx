@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://farhann.dev"),
   title: {
-    default: "Mohammad Farhan — Software Engineer | farhann.dev",
-    template: "%s | farhann.dev",
+    default: "Mohammad Farhan",
+    template: "%s | Mohammad Farhan",
   },
   description:
     "Computer Science graduate from UPM specializing in full-stack development, cloud infrastructure, and AI integrations. Skilled in Java, Python, AWS, DigitalOcean, and networking.",
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://farhann.dev",
     siteName: "farhann.dev",
-    title: "Mohammad Farhan — Software Engineer | farhann.dev",
+    title: "Mohammad Farhan",
     description:
       "Computer Science graduate from UPM specializing in full-stack development, cloud infrastructure, and AI integrations.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammad Farhan — Software Engineer | farhann.dev",
+    title: "Mohammad Farhan",
     description:
       "Computer Science graduate from UPM specializing in full-stack development, cloud infrastructure, and AI integrations.",
   },

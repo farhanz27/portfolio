@@ -2,15 +2,24 @@
 
 Personal portfolio site built with Next.js, showcasing my projects, skills, and career journey as a Software Engineer.
 
+
+
+## Live Site
+
+[farhann.dev](https://farhann.dev)
+
+
+
 ## Tech Stack
 
 - **Framework** — Next.js 16 (App Router), React 19
 - **Styling** — Tailwind CSS 4
-- **Animations** — Framer Motion
-- **Background** — tsparticles (animated particle canvas)
+- **Animations** — Framer Motion (UI motion + interactive blob background)
 - **Icons** — Lucide React, React Icons
-- **UI Utilities** — clsx, tailwind-merge, class-variance-authority, Radix UI Slot
+- **UI Utilities** — clsx, tailwind-merge
 - **Contact Form** — Formspree
+
+
 
 ## Sections
 
@@ -21,6 +30,8 @@ Personal portfolio site built with Next.js, showcasing my projects, skills, and 
 - **Achievements** — Asia Pacific competition awards
 - **Contact** — Contact form
 
+
+
 ## Getting Started
 
 ```bash
@@ -29,6 +40,8 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+
 
 ## Project Structure
 
@@ -51,7 +64,3 @@ src/
 └── lib/
     └── utils.ts          # Utility functions (cn)
 ```
-
-## Live Site
-
-[farhann.dev](https://farhann.dev)
